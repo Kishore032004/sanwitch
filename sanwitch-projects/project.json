@@ -1,39 +1,70 @@
 [
   {
-    "id": 1,
-    "type": "led",
-    "x": 253.33335876464844,
-    "y": 142.66664399041073,
-    "nextId": 2,
-    "pin": "2",
-    "state": "1"
-  },
-  {
-    "id": 2,
-    "type": "pwm_led",
-    "x": 669.1666836208768,
-    "y": 154.88887045118543,
-    "nextId": 3,
-    "pin": "2",
-    "duty": "512"
-  },
-  {
-    "id": 3,
-    "type": "buzzer",
-    "x": 95.83336724175348,
-    "y": 447.944426006741,
-    "nextId": 4,
-    "pin": "15",
-    "freq": "2000",
-    "duration": "200"
-  },
-  {
     "id": 4,
-    "type": "servo",
-    "x": 730,
-    "y": 600.1666567060682,
-    "nextId": null,
-    "pin": "18",
-    "angle": "90"
+    "type": "while_loop",
+    "x": 147.55547078450513,
+    "y": 130.2221722073025,
+    "nextId": 6,
+    "condType": "text",
+    "condition": "True",
+    "sensor": "button",
+    "pin": "4",
+    "op": "==",
+    "thresh": "1",
+    "childStartId": 5,
+    "children": [
+      {
+        "id": 5,
+        "type": "if_logic",
+        "x": 459.7777438693576,
+        "y": 133.5555182562934,
+        "nextId": 8,
+        "condType": "sensor",
+        "condition": "True",
+        "sensor": "ir",
+        "pin": "24",
+        "op": "==",
+        "thresh": "1",
+        "childStartId": 3,
+        "children": [
+          {
+            "id": 3,
+            "type": "buzzer",
+            "x": 827.5554877387153,
+            "y": 165.7777362399631,
+            "nextId": null,
+            "pin": "15",
+            "freq": "2000",
+            "duration": "200"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "type": "if_logic",
+        "x": 458.6666497124566,
+        "y": 597.9999443022832,
+        "nextId": null,
+        "condType": "sensor",
+        "condition": "True",
+        "sensor": "ir",
+        "pin": "24",
+        "op": "!=",
+        "thresh": "1",
+        "childStartId": 10,
+        "children": [
+          {
+            "id": 10,
+            "type": "buzzer",
+            "x": 851.9999830457899,
+            "y": 620.2222512955557,
+            "nextId": null,
+            "pin": "15",
+            "freq": "0",
+            "duration": "200"
+          }
+        ]
+      }
+    ]
   }
 ]
