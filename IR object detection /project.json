@@ -1,0 +1,70 @@
+[
+  {
+    "id": 3,
+    "type": "while_loop",
+    "x": 128.66664971245658,
+    "y": 413.5555436876086,
+    "nextId": null,
+    "condType": "text",
+    "condition": "True",
+    "sensor": "button",
+    "pin": "4",
+    "op": "==",
+    "thresh": "1",
+    "childStartId": 4,
+    "children": [
+      {
+        "id": 4,
+        "type": "if_logic",
+        "x": 464.2222391764322,
+        "y": 289.11110136244037,
+        "nextId": 7,
+        "condType": "sensor",
+        "condition": "True",
+        "sensor": "ir",
+        "pin": "24",
+        "op": "==",
+        "thresh": "1",
+        "childStartId": 6,
+        "children": [
+          {
+            "id": 6,
+            "type": "buzzer",
+            "x": 819.7777777777777,
+            "y": 323.55555004543737,
+            "nextId": null,
+            "pin": "15",
+            "freq": "2000",
+            "duration": "200"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "type": "if_logic",
+        "x": 466.4444274902343,
+        "y": 790.2222294277616,
+        "nextId": null,
+        "condType": "sensor",
+        "condition": "True",
+        "sensor": "button",
+        "pin": "24",
+        "op": "!=",
+        "thresh": "1",
+        "childStartId": 5,
+        "children": [
+          {
+            "id": 5,
+            "type": "buzzer",
+            "x": 816.4444105360243,
+            "y": 862.4444092644587,
+            "nextId": null,
+            "pin": "15",
+            "freq": "0",
+            "duration": "200"
+          }
+        ]
+      }
+    ]
+  }
+]
