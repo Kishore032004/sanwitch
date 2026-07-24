@@ -1,11 +1,9 @@
-from machine import Pin, PWM
+import time
+import dht
+from machine import Pin
 
 while True:
-    if Pin(24, Pin.IN).value() == 1:
-        _buzz = PWM(Pin(15), freq=2000, duty=512)
-        time.sleep_ms(200)
-        _buzz.deinit()
-    if Pin(24, Pin.IN).value() != 1:
-        _buzz = PWM(Pin(15), freq=0, duty=512)
-        time.sleep_ms(200)
-        _buzz.deinit()
+    time.sleep_ms(1000)
+    _dht = dht.DHT11(Pin(14))
+    _dht.measure()
+    print("temp", _dht.temperature(), "humidity", _dht.humidity())
