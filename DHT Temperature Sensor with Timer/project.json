@@ -1,0 +1,35 @@
+[
+  {
+    "id": 3,
+    "type": "while_loop",
+    "x": 128.66664971245658,
+    "y": 413.5555436876086,
+    "nextId": null,
+    "condType": "text",
+    "condition": "True",
+    "sensor": "button",
+    "pin": "4",
+    "op": "==",
+    "thresh": "1",
+    "childStartId": 2,
+    "children": [
+      {
+        "id": 2,
+        "type": "delay",
+        "x": 443.1111111111111,
+        "y": 455.7777526604311,
+        "nextId": 1,
+        "value": "1000"
+      },
+      {
+        "id": 1,
+        "type": "dht11",
+        "x": 746.4443935818142,
+        "y": 411.3333194559987,
+        "nextId": null,
+        "pin": "14",
+        "assignVar": ""
+      }
+    ]
+  }
+]
