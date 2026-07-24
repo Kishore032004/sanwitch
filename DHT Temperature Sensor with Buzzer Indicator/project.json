@@ -1,0 +1,53 @@
+[
+  {
+    "id": 9,
+    "type": "while_loop",
+    "x": 109.77776082356763,
+    "y": 485.11110941569007,
+    "nextId": null,
+    "condType": "text",
+    "condition": "True",
+    "sensor": "button",
+    "pin": "4",
+    "op": "==",
+    "thresh": "1",
+    "childStartId": 8,
+    "children": [
+      {
+        "id": 8,
+        "type": "if_logic",
+        "x": 492.00002543131507,
+        "y": 420.6666946411133,
+        "nextId": 11,
+        "condType": "sensor",
+        "condition": "True",
+        "sensor": "dht11",
+        "pin": "24",
+        "op": "==",
+        "thresh": "45",
+        "childStartId": 10,
+        "children": [
+          {
+            "id": 10,
+            "type": "buzzer",
+            "x": 792.000008477105,
+            "y": 511.7777506510417,
+            "nextId": null,
+            "pin": "15",
+            "freq": "2000",
+            "duration": "200"
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "type": "dht11",
+        "x": 492.00002543131507,
+        "y": 866.2222035725912,
+        "nextId": null,
+        "pin": "24",
+        "assignVar": ""
+      }
+    ]
+  }
+]
