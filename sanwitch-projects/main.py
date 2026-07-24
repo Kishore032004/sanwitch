@@ -1,7 +1,11 @@
 from machine import Pin, PWM
 
-Pin(2, Pin.OUT).value(1)
-PWM(Pin(2), freq=1000, duty=512)
-_buzz = PWM(Pin(15), freq=2000, duty=512)
-time.sleep_ms(200)
-_buzz.deinit()
+while True:
+    if Pin(24, Pin.IN).value() == 1:
+        _buzz = PWM(Pin(15), freq=2000, duty=512)
+        time.sleep_ms(200)
+        _buzz.deinit()
+    if Pin(24, Pin.IN).value() != 1:
+        _buzz = PWM(Pin(15), freq=0, duty=512)
+        time.sleep_ms(200)
+        _buzz.deinit()
