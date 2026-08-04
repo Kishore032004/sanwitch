@@ -1,0 +1,296 @@
+[
+  {
+    "id": 100,
+    "type": "ble_init",
+    "name": "Sanwitch-ESP32",
+    "x": 70,
+    "y": 70,
+    "nextId": 101
+  },
+  {
+    "id": 101,
+    "type": "loop",
+    "x": 70,
+    "y": 324,
+    "nextId": null,
+    "childStartId": 102,
+    "children": [
+      {
+        "id": 102,
+        "type": "ble_receive",
+        "assignVar": "msg",
+        "nextId": 103,
+        "x": 344,
+        "y": 332
+      },
+      {
+        "id": 103,
+        "type": "if_logic",
+        "condType": "text",
+        "condition": "msg == \"FRONT :PUSH\"",
+        "nextId": 105,
+        "childStartId": 104,
+        "children": [
+          {
+            "id": 104,
+            "type": "print",
+            "value": "Front  Pressed",
+            "nextId": 5,
+            "x": 385.99993896484375,
+            "y": 716.0000076293945
+          },
+          {
+            "id": 5,
+            "type": "dc_motor",
+            "x": 664.8888108995225,
+            "y": 706.0000404075303,
+            "nextId": 6,
+            "pin1": "26",
+            "pin2": "27",
+            "state": "forward"
+          },
+          {
+            "id": 6,
+            "type": "dc_motor",
+            "x": 927.1110161675347,
+            "y": 702.6667159280613,
+            "nextId": null,
+            "pin1": "26",
+            "pin2": "27",
+            "state": "forward"
+          }
+        ],
+        "x": 87.99993896484375,
+        "y": 628.0000076293945
+      },
+      {
+        "id": 105,
+        "type": "if_logic",
+        "condType": "text",
+        "condition": "msg == \"STOP :PUSH\"",
+        "nextId": 107,
+        "childStartId": 106,
+        "children": [
+          {
+            "id": 106,
+            "type": "print",
+            "value": "Stop  Pressed",
+            "nextId": 7,
+            "x": 385.99993896484375,
+            "y": 1120.0000076293945
+          },
+          {
+            "id": 7,
+            "type": "dc_motor",
+            "x": 671.5554606119791,
+            "y": 1107.7777512475825,
+            "nextId": 8,
+            "pin1": "26",
+            "pin2": "27",
+            "state": "stop"
+          },
+          {
+            "id": 8,
+            "type": "dc_motor",
+            "x": 942.6665886773004,
+            "y": 1106.6667211713132,
+            "nextId": null,
+            "pin1": "26",
+            "pin2": "27",
+            "state": "stop"
+          }
+        ],
+        "x": 87.99993896484375,
+        "y": 1032.0000076293945
+      },
+      {
+        "id": 107,
+        "type": "if_logic",
+        "condType": "text",
+        "condition": "msg == \"BACK:PUSH\"",
+        "nextId": 18,
+        "childStartId": 108,
+        "children": [
+          {
+            "id": 108,
+            "type": "print",
+            "value": "Back Pressed",
+            "nextId": 10,
+            "x": 378.2221950954861,
+            "y": 1479.5555631849502
+          },
+          {
+            "id": 10,
+            "type": "dc_motor",
+            "x": 655.9999728732639,
+            "y": 1476.222229851617,
+            "nextId": 9,
+            "pin1": "26",
+            "pin2": "27",
+            "state": "reverse",
+            "childStartId": null
+          },
+          {
+            "id": 9,
+            "type": "dc_motor",
+            "x": 927.1111009385851,
+            "y": 1473.9999991522895,
+            "nextId": null,
+            "pin1": "26",
+            "pin2": "27",
+            "state": "reverse",
+            "childStartId": null
+          }
+        ],
+        "x": 87.99993896484375,
+        "y": 1436.0000076293945
+      },
+      {
+        "id": 18,
+        "type": "if_logic",
+        "condType": "text",
+        "condition": "msg == \"LEFT:PUSH\"",
+        "nextId": 22,
+        "childStartId": 17,
+        "children": [
+          {
+            "id": 108,
+            "type": "print",
+            "value": "Back Pressed",
+            "nextId": 10,
+            "x": 378.2221950954861,
+            "y": 1479.5555631849502
+          },
+          {
+            "id": 10,
+            "type": "dc_motor",
+            "x": 655.9999728732639,
+            "y": 1476.222229851617,
+            "nextId": 9,
+            "pin1": "26",
+            "pin2": "27",
+            "state": "reverse",
+            "childStartId": null
+          },
+          {
+            "id": 9,
+            "type": "dc_motor",
+            "x": 927.1111009385851,
+            "y": 1473.9999991522895,
+            "nextId": null,
+            "pin1": "26",
+            "pin2": "27",
+            "state": "reverse",
+            "childStartId": null
+          },
+          {
+            "id": 17,
+            "type": "print",
+            "value": "LEFT Pressed",
+            "nextId": 15,
+            "x": 352.4443791707357,
+            "y": 1858.4444796244304,
+            "childStartId": null
+          },
+          {
+            "id": 15,
+            "type": "dc_motor",
+            "x": 632.4443452623156,
+            "y": 1856.2221556769478,
+            "nextId": 16,
+            "pin1": "26",
+            "pin2": "27",
+            "state": "reverse",
+            "childStartId": null
+          },
+          {
+            "id": 16,
+            "type": "dc_motor",
+            "x": 909.1110288831924,
+            "y": 1859.5556076897517,
+            "nextId": null,
+            "pin1": "26",
+            "pin2": "27",
+            "state": "reverse",
+            "childStartId": null
+          }
+        ],
+        "x": 81.33326805962457,
+        "y": 1833.7777790493435
+      },
+      {
+        "id": 22,
+        "type": "if_logic",
+        "condType": "text",
+        "condition": "msg == \"RIGHT:PUSH\"",
+        "nextId": null,
+        "childStartId": 21,
+        "children": [
+          {
+            "id": 108,
+            "type": "print",
+            "value": "Back Pressed",
+            "nextId": 10,
+            "x": 378.2221950954861,
+            "y": 1479.5555631849502
+          },
+          {
+            "id": 10,
+            "type": "dc_motor",
+            "x": 655.9999728732639,
+            "y": 1476.222229851617,
+            "nextId": 9,
+            "pin1": "26",
+            "pin2": "27",
+            "state": "reverse",
+            "childStartId": null
+          },
+          {
+            "id": 9,
+            "type": "dc_motor",
+            "x": 927.1111009385851,
+            "y": 1473.9999991522895,
+            "nextId": null,
+            "pin1": "26",
+            "pin2": "27",
+            "state": "reverse",
+            "childStartId": null
+          },
+          {
+            "id": 21,
+            "type": "print",
+            "value": "RIGHT Pressed",
+            "nextId": 20,
+            "x": 342.44438340928815,
+            "y": 2210.6666997273765,
+            "childStartId": null
+          },
+          {
+            "id": 20,
+            "type": "dc_motor",
+            "x": 609.1110500759548,
+            "y": 2221.777887132433,
+            "nextId": 19,
+            "pin1": "26",
+            "pin2": "27",
+            "state": "reverse",
+            "childStartId": null
+          },
+          {
+            "id": 19,
+            "type": "dc_motor",
+            "x": 882.4444088406034,
+            "y": 2226.222297668457,
+            "nextId": null,
+            "pin1": "26",
+            "pin2": "27",
+            "state": "reverse",
+            "childStartId": null
+          }
+        ],
+        "x": 80.22215270996094,
+        "y": 2197.1111971537275
+      }
+    ]
+  }
+]
